@@ -1,11 +1,13 @@
 import React, {Component} from 'react';
 
 class Home extends Component {    
-  
+  // Renders landing page text
   render() {
     return (
       <div className="home">
-        <h2>Brian's Flickr React Gallery</h2>
+        <h1>Brian's Flickr React Gallery</h1>
+        <img className="flickr-logo" src={require("../images/flickr.svg")} alt=""/>
+        <p>Search above for images on Flickr!</p>
       </div>
     );
   }

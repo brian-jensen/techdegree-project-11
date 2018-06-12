@@ -2,8 +2,7 @@ import React from 'react';
 
 const NotFound = () => (
   <div>
-    <h2>404 Error</h2>
-    <p>Page Not Found</p>
+    <img src={require("../images/404.svg")} alt="" />
   </div>
 );
 
