@@ -1,33 +1,25 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import './App.css';
+import {BrowserRouter, Route, Switch} from 'react-router-dom';
 
-import apiKey from './config';
-import axios from 'axios';
-import PhotosList from './Components/PhotosList';
+import Home from './Components/Home';
+import PhotoContainer from './Components/PhotoContainer';
+import Navigation from './Components/Navigation';
+import NotFound from './Components/NotFound';
 
 class App extends Component {
-
-  state = {
-    photos: []
-  }
-
-  async componentDidMount() {
-    try {
-      const response = await axios.get(`https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=${apiKey}&text=dinasaurs&per_page=16&sort=relevance&content_type=1&format=json&nojsoncallback=1`);
-      const photos = response.data.photos.photo;
-      this.setState({
-        photos
-      });
-    } catch (error) {
-      console.log('Error fetching flickr API data', error);
-    }
-  }
-
   render() {
     return (
-      <main>
-        <PhotosList data={this.state.photos} />
-      </main>
+      <BrowserRouter>
+        <div className="container">
+          <Navigation />
+          <Switch>
+            <Route exact path="/" component={Home} />
+            <Route exact path="/search/:text" component={PhotoContainer} />
+            <Route component={NotFound} />
+          </Switch>
+        </div>
+      </BrowserRouter>
     );
   }
 }

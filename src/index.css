@@ -1,5 +1,139 @@
+/* presets */
 body {
-  margin: 0;
-  padding: 0;
-  font-family: sans-serif;
+  background-image: url("./images/random_grey_variations.png");
+  font-family: 'Roboto', sans-serif;
+  font-weight: 100;
+  min-width: 320px;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
+}
+
+ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+.photo-search,
+.search-button {
+  outline: none;
+  border: none;
+  border-style: none;
+}
+
+/* gallery */
+header {
+  background-color: rgba(0,0,0,.6);
+  height: 140px;
+  margin-bottom: 30px;
+  box-shadow: 0 0 10px #111;
+  border-radius: 3px;
+}
+
+.main-nav li {
+  display: inline-block;
+  margin: 30px 12px 0px;
+}
+
+.main-nav a {
+  background-color: #555;
+  padding: 5px 8px;
+  border-radius: 5px;
+}
+
+.main-nav a:hover {
+  background-color: #713939;
+}
+
+.container {
+  max-width: 1000px;
+  margin: auto;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+label {
+  display: none;
+}
+
+.search-form {
+  padding-top: 30px;
+}
+
+.photo-search {
+  width: 220px;
+  height: 30px;
+  padding-left: 6px;
+  color: #555;
+  font-weight: 300;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  vertical-align: top;
+  line-height: 30px;
+}
+
+.photo-search::placeholder {
+  font-size: 12px;
+  font-style: italic;
+  font-weight: 400;
+  color: #000;
+}
+
+.search-button {
+  height: 31px;
+  width: 30px;
+  background-color: white;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  background-color: #555;
+  background-image: url("./images/search-indicator-magnifying-glass.svg");
+  background-repeat: no-repeat;
+  background-size: 15px 15px;
+  background-position: 50% 50%;
+  cursor: pointer;
+}
+
+.search-button:hover {
+  background-color: #713939;
+}
+
+/* Chrome and Safari fix */
+@media all and (-webkit-min-device-pixel-ratio:0) and (min-resolution: .001dpcm) {
+  .photo-search {
+    vertical-align: bottom;
+  }
+  .search-button {
+    position: relative;
+    top: 3px;
+  }
+}
+
+.photo-list {
+  display: flex;
+  flex-wrap: wrap;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.photo {
+  flex-basis: 25%;
+  margin: 10px auto 10px auto;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.photo img {
+  display: block;
+  width: 220px;
+  height: 165px;
+  box-shadow: 0px 0px 15px 5px rgba(0,0,0,0.5);
+  border-radius: 3px;
+  border: 1px solid rgba(86,70,76,0.8);
 }
