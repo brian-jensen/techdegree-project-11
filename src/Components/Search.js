@@ -6,10 +6,13 @@ export default class Search extends Component {
     text: ''
   }
   
+  // Listens to the search input field for when the user enters text
   onSearchChange = e => {
     this.setState({ text: e.target.value });
   }
   
+  // Listens for when the user hits enter or clicks the submit button
+  // Globally updates the value text via input
   handleSubmit = e => {
     e.preventDefault();
     if (this.text.value === ''){

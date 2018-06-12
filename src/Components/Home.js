@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 
 class Home extends Component {    
-  // Renders landing page text
+  // Renders landing page text and image when the route is at "/"
   render() {
     return (
       <div className="home">
