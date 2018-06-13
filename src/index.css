@@ -171,3 +171,16 @@ label {
   border-radius: 3px;
   border: 1px solid rgba(86,70,76,0.8);
 }
+
+.photo img:hover {
+  box-shadow: 0px 0px 6px 3px rgba(255,255,255,0.2);
+  border: 1px solid #713939;
+  animation: tilt 0.6s linear forwards;
+}
+
+@keyframes tilt {
+  0%   {transform: rotate(-2deg)}
+  25%  {transform: rotate(0deg)}
+  50%  {transform: rotate(2deg)}
+  100% {transform: rotate(0deg)}
+}
